@@ -20,6 +20,10 @@ class CreateFlightTable extends Migration
             $table->string('to_country');
             $table->string('start_time');
             $table->string('end_time');
+            $table->string('cost');
+            $table->string('seat_num');
+            $table->string('Vip');
+            $table->string('Normal');
             $table->timestamps();
         });
     }

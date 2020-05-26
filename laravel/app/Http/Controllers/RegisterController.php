@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
-
+use App\Users;
 class RegisterController extends Controller
 {
     public function register(Request $request)
 	{
 
     	$name = $request->input('name');
-		$password = $request->input('passowrd');
+		$password = $request->input('password');
 		$email = $request->input('email'); 
-		$data=db::select('select email from fli_use where email =?',[$email]);
-		if(count($data))
+		$data = Users::where('email', $email)->first();
+		if($data)
 		{
 			echo "you are already registered";
 		}
@@ -27,13 +27,18 @@ class RegisterController extends Controller
 
 				else
 					{
-						DB::insert('insert into fli_use (id,name,email,password) values(?,?,?,?)',[null,$name,$email,$password]);
-        			}		echo "welcome";
+						$user = new Users([
+							'name' => $name,
+							'email' => $email,
+							'password' => $password,
+						  ]);
+						  $user->save();
+					}
 		}			
 	}
 	public function showregester()
 	{
-		return view('register');
+		return view('form');
 	}
 	 
 }

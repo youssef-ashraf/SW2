@@ -15,9 +15,7 @@ class CreateSeatTable extends Migration
     {
         Schema::create('seat', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('position');
-            $table->string('seat_number');
+            $table->string('seat_type');
             $table->timestamps();
         });
     }

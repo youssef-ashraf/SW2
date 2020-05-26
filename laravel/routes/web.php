@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('/register','RegisterController@showregester');
 Route::post('/register','RegisterController@register');
+Route::get('/reserve','AddTickets@show');
+Route::post('/reserve','AddTickets@store');

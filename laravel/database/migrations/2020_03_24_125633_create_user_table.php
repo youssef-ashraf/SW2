@@ -13,7 +13,7 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('fli_use', function (Blueprint $table) {
+        Schema::create('Users', function (Blueprint $table) {
              $table->id();
             $table->string('name');
             $table->string('email')->unique();
