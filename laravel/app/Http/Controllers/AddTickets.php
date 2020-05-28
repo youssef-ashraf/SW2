@@ -13,7 +13,7 @@ class AddTickets extends Controller
       {
          
          $flights = Flight::all();
-          return view('flight_views.addTicket', ['flights'=>$flights]);
+          return view('addTicket')->with(['flights'=> $flights]);;
           
       }
       //store the get data from user in ticket database
