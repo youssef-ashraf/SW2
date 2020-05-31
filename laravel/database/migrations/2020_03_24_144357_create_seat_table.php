@@ -13,11 +13,20 @@ class CreateSeatTable extends Migration
      */
     public function up()
     {
-        Schema::create('seat', function (Blueprint $table) {
+        Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->string('seat_type');
-            $table->timestamps();
+            $table->string('type');
+            $table->integer('seatnum');
+            $table->integer('seatcost');
+            $table->string('seatstate')->default('on');
+            $table->unsignedBigInteger('flight_id');
+           
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+    
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
         });
+        
     }
 
     /**
@@ -27,6 +36,6 @@ class CreateSeatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seat');
+        Schema::dropIfExists('seats');
     }
 }

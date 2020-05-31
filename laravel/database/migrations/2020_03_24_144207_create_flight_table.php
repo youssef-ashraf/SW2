@@ -13,18 +13,22 @@ class CreateFlightTable extends Migration
      */
     public function up()
     {
-        Schema::create('flight', function (Blueprint $table) {
+        Schema::create('flights', function (Blueprint $table) {
             
             $table->id();
             $table->string('from_country');
             $table->string('to_country');
-            $table->string('start_time');
-            $table->string('end_time');
-            $table->string('cost');
-            $table->string('seat_num');
-            $table->string('Vip');
-            $table->string('Normal');
-            $table->timestamps();
+            $table->string('take_off_date');
+            $table->string('take_off_time');
+            $table->string('land_date');
+            $table->string('land_time');
+            $table->integer('seat_vip_num');
+            $table->integer('vip_cost');
+            $table->integer('seat_normal_num');
+            $table->integer('normal_cost');
+            $table->string('img');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

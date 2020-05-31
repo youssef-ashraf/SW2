@@ -5,13 +5,21 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class seat extends Model
-{
+{ protected $guarded = ['id'];
     protected $fillable = [
-        'seat_type'
-   ];
+        'type' , 'seatnum' ,'seatcost','flight_id' 
+       ];
+   
+   
 
-    public function flight()
+    public function flights()
     {
-        return $this->belongsTo('App\Flight');
+        return $this->belongsTo('App\seat');
+    }
+
+    
+    public function useflis()
+    {
+        return $this->belongsTo('App\usefli');
     }
 }

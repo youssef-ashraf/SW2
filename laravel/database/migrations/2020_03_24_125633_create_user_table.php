@@ -13,12 +13,14 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('Users', function (Blueprint $table) {
-             $table->id();
+        Schema::create('useflis', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->timestamps();
+            $table->integer('lock')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
