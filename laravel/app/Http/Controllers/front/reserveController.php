@@ -12,7 +12,7 @@ class AddTickets extends Controller
       public function showForm()
       {
          
-        return view('front/login');
+        return view('front/search_reserve');
           
       }
       //store the get data from user in ticket database
@@ -33,43 +33,46 @@ class AddTickets extends Controller
           $visa_pass = $request->input('visa_pass');
           //sure is the password and email is valid or not
           
-          $user_id = DB::table('useflis')
-          ->where('email',$email )
+          $user_id = usefli::where('email',$email )
           ->where('password',$password)
           ->value('id');
           if(!$user_id)
           {
               echo "password and email not valid";
+              return back();
           }
           else
           {
               if(strlen( $visa_num)!=16)
               {
                   echo "password and visa number not valid";
+                  return back();
               }
               else
               {
                   //retrive all flight information from flight table
                   $flight_info = DB::table('flights')->where('id', $selectValue)->first();
                   $state='on';
-                  $seat_info = DB::table('seats')
-                     ->where('flight_id', $selectValue)
+                  $seat_info = seat::where('flight_id', $selectValue)
                       ->where('type',$selectType)
                       ->where('seatstate',$state)
                       ->first();
                       $newstate='off';
                       $s_id=$seat_info->id;
-                 $affectedRows = DB::table('seats')->where('id',$s_id)->update(array('seatstate' => $newstate));
-                    $ticket = new Ticket([
+                 $affectedRows = seat::where('id',$s_id)->update(array('seatstate' => $newstate));
+                    $ticket = new ticket([
                       'user_id'  => $user_id->id,
-                      'seat_id'  => $seat_num,
+                      'seat_id'  => $s_id,
                       'flight_id'  => $selectValue,
                       'from_country'  => $flight_info->from_country ,
                       'to_country'  => $flight_info->to_country ,
-                      'start_time' => $flight_info->start_time,
-                      'end_time' =>  $flight_info->end_time,
-                      'cost'  =>$flight_info->cost,
+                      'take_off_date' => $flight_info->take_off_date,
+                      'take_off_time' => $flight_info->take_off_time,
+                      'land_date' =>  $flight_info->land_date,
+                      'land_time' =>  $flight_info->land_time,
+                      'cost'  =>$seat_info->seatcost,
                       'seat_type' => $selectType ,
+                      'seat_num' => $seat_info->seatnum ,
                     ]);
                     $ticket->save();
                         return view('front/ticket',compact('ticket'));

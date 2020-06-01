@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class seat extends Model
-{ protected $guarded = ['id'];
+{
+    protected $guarded = ['id'];
     protected $fillable = [
         'type' , 'seatnum' ,'seatcost','flight_id' 
        ];
@@ -22,4 +23,5 @@ class seat extends Model
     {
         return $this->belongsTo('App\usefli');
     }
+
 }

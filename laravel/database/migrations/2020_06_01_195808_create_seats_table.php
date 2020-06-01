@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeatTable extends Migration
+class CreateSeatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,14 +20,13 @@ class CreateSeatTable extends Migration
             $table->integer('seatcost');
             $table->string('seatstate')->default('on');
             $table->unsignedBigInteger('flight_id');
-           
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
     
-            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
         });
-        
     }
+
 
     /**
      * Reverse the migrations.
