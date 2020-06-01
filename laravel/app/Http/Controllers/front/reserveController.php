@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ticket;
-use App\Flight;
+use App\flight;
+use App\usefli;
+use App\seat;
 use Illuminate\Support\Facades\DB;
 class AddTickets extends Controller
 {
@@ -51,7 +53,7 @@ class AddTickets extends Controller
               else
               {
                   //retrive all flight information from flight table
-                  $flight_info = DB::table('flights')->where('id', $selectValue)->first();
+                  $flight_info = flight::where('id', $selectValue)->first();
                   $state='on';
                   $seat_info = seat::where('flight_id', $selectValue)
                       ->where('type',$selectType)

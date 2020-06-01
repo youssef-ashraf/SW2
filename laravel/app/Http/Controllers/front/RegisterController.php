@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 use App\usefli;
+use App\flight;
 class RegisterController extends Controller
 {
 	public function showReg()
