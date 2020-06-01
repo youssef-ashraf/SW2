@@ -60,17 +60,21 @@ class AddTickets extends Controller
                       $newstate='off';
                       $s_id=$seat_info->id;
                  $affectedRows = DB::table('seats')->where('id',$s_id)->update(array('seatstate' => $newstate));
-                    $ticket = new Ticket([
-                      'user_id'  => $user_id->id,
-                      'seat_id'  => $seat_num,
-                      'flight_id'  => $selectValue,
-                      'from_country'  => $flight_info->from_country ,
-                      'to_country'  => $flight_info->to_country ,
-                      'start_time' => $flight_info->start_time,
-                      'end_time' =>  $flight_info->end_time,
-                      'cost'  =>$flight_info->cost,
-                      'seat_type' => $selectType ,
-                    ]);
+                 $ticket = new ticket([
+                    'user_id'  => $user_id,
+                    'seat_id'  => $seat_info->id,
+                    'flight_id'  => $selectValue,
+                    'from_country'  => $flight_info->from_country ,
+                    'to_country'  => $flight_info->to_country ,
+                    'take_off_date' => $flight_info->take_off_date,
+                    'take_off_time' => $flight_info->take_off_time,
+                    'land_date' =>  $flight_info->land_date,
+                    'land_time' =>  $flight_info->land_time,
+                    'cost'  =>$seat_info->seatcost,
+                    'seat_type' => $selectType ,
+                    'seat_num' => $seat_info->seatnum ,
+
+                  ]);
                     $ticket->save();
                         return view('front/ticket',compact('ticket'));
             

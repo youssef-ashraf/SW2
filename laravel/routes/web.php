@@ -21,9 +21,16 @@ Route::get('/register','RegisterController@showregester');
 Route::post('/register','RegisterController@register');
 Route::get('/reserve','AddTickets@show');
 Route::post('/reserve','AddTickets@store');
-Route::get('/reserve','reserveController@showForm')->name('front.showreserve');
+
 
 Route::namespace('front')->group(function(){
 
 Route::post('/reserve_ticket','reserveController@Reserve')->name('front.save_ticket');
+Route::get('/reserve','reserveController@showForm')->name('front.showreserve');
+});
+
+Route::namespace('admin')->group(function(){
+
+Route::get('/viewticket','ticketController@viewallticket')->name('admin.view_ticket');
+    Route::get('/list_after/{id}','ticketController@delete');
 });
