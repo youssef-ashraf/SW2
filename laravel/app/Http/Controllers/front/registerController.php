@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\front;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +31,7 @@ class RegisterController extends Controller
 			$user = new usefli([
 				'name' => $name,
 				'email' => $email,
-				'password' => $password
+				'password' => $password,
 			  ]);
 			  $user->save();
 			if($email="fci@helwan.com")

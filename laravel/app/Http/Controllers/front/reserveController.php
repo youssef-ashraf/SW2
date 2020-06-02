@@ -60,7 +60,7 @@ class reserveController extends Controller
                       ->where('type',$selectType)
                       ->where('seatstate',$state)
                       ->first();
-                      echo $seat_info->id;
+                      
                       $newstate='off';
                       $s_id=$seat_info->id;
                  $affectedRows = seat::where('id',$s_id)->update(array('seatstate' => $newstate));
