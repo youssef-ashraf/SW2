@@ -13,20 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/register','RegisterController@showregester');
-Route::post('/register','RegisterController@register');
-Route::get('/reserve','AddTickets@show');
-Route::post('/reserve','AddTickets@store');
-
-
 Route::namespace('front')->group(function(){
 
-Route::post('/reserve_ticket','reserveController@Reserve')->name('front.save_ticket');
-Route::get('/reserve','reserveController@showForm')->name('front.showreserve');
+    Route::get('/','homeController@index')->name('front.homepage');
+    Route::get('/flight','flightController@flight')->name('front.flight');
+    Route::get('/log_reg','loginController@showForm')->name('front.log');
+    Route::get('/log/reg','registerController@showReg')->name('front.reg');
+    Route::get('/logout','logout@log_out')->name('front.index');
+    Route::get('/reserve','reserveController@showForm')->name('front.showreserve');
+    Route::post('/login','loginController@login')->name('front.login');
+    Route::post('/register','registerController@register')->name('front.register');
+    Route::post('/search_flight','searchflightController@searchflight')->name('front.search');
+    Route::post('/search_reserve','searchflightController@reservesearchflight')->name('front.reservesearch');
+    Route::post('/reserve_ticket','reserveController@Reserve')->name('front.save_ticket');
+
 });
 
 Route::namespace('admin')->group(function(){

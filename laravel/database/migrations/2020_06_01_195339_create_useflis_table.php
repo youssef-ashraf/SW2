@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTable extends Migration
+class CreateUseflisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,6 @@ class CreateUserTable extends Migration
             $table->timestamp('updated_at')->useCurrent();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -31,6 +30,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fli_use');
+        Schema::dropIfExists('useflis');
     }
 }
