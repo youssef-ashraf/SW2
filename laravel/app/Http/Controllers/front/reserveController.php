@@ -65,7 +65,7 @@ class reserveController extends Controller
                       $s_id=$seat_info->id;
                  $affectedRows = seat::where('id',$s_id)->update(array('seatstate' => $newstate));
                     $ticket = new ticket([
-                      'user_id'  => $user_id->id,
+                      'user_id'  => $user_id,
                       'seat_id'  => $s_id,
                       'flight_id'  => $selectValue,
                       'from_country'  => $flight_info->from_country ,
