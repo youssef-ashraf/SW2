@@ -23,10 +23,12 @@ class FlightController extends Controller
         $vip_num = $request->input('v_num');
         $normal_cost= $request->input('n_cost');
         $normal_num= $request->input('n_num');
-        $img= $request->input('img');
-
-        $new_name=$img->hashName();
-        Image::make($img)->resize(324,327)->save(public_path('uploads/flight/'.$new_name));  
+        $data=$request->validate([
+            'img'=>'required|image|mimes:jpg,jpeg,png'
+        ]);
+        //dd($data);
+        $new_name=$data['img']->hashName();
+        Image::make($data['img'])->resize(324,327)->save(public_path('uploads/flight/'.$new_name));  
         $flight = new flight([
             'from_country'  =>$from ,
             'to_country'  => $to ,

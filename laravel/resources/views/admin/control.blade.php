@@ -64,52 +64,55 @@
         
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Users</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('admin.deleteuser')}}">Delete User</a>
-            <a class="collapse-item" href="{{route('admin.view_user')}}">View Users </a>
-            <a class="collapse-item" href="{{route('admin.adduser')}}">Add User </a>
-      
-          </div>
-        </div>
+        <a class="nav-link" href="{{route('admin.adduser')}}">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Add User</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.deleteuser')}}">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Delete User</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.view_user')}}">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>View_User</span></a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link" href="{{route('admin.addflight')}}">
           <i class="fas fa-fw fa-wrench"></i>
-            <span>Flights</span>
-            </a>
-          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('admin.deleteflight')}}">Delete Flight</a>
-            <a class="collapse-item" href="{{route('admin.view_flight')}}">View_Flight</a>
-			      <a class="collapse-item" href="{{route('admin.addflight')}}">Add Flight </a>
-          </div>
-        </div>
+          <span>Add Flight</span></a>
       </li>
-	  
-	    <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Tickets</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('admin.addticket')}}">Book Flight</a>
-            <a class="collapse-item" href="{{route('admin.view_ticket')}}">View Tickets </a>
-            <a class="collapse-item" href="{{route('admin.deleteticket')}}">delete Tickets </a>
-			
-          </div>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.deleteflight')}}">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Delete Flight</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.view_flight')}}">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>View_Flight</span></a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.addticket')}}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Book Ticket</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.deleteticket')}}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Delete Ticket</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('admin.view_ticket')}}}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>View_Ticket</span></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route('front.homepage')}}">
           <i class="fas fa-fw fa-folder"></i>
@@ -185,27 +188,6 @@
                     </div>
                     @endforeach
                 </div>
-
-
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{asset('adminn')}}/vendor/jquery/jquery.min.js"></script>
