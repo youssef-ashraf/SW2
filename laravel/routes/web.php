@@ -30,7 +30,23 @@ Route::namespace('front')->group(function(){
 });
 
 Route::namespace('admin')->group(function(){
-
-Route::get('/viewticket','ticketController@viewallticket')->name('admin.view_ticket');
+    Route::get('/admin','show_formsController@showpage')->name('admin.control');
+    Route::get('/addflight','show_formsController@showaddflight')->name('admin.addflight');
+    Route::get('/deleteflight','show_formsController@showdeleteflight')->name('admin.deleteflight');
+    Route::get('/adduser','show_formsController@showadduser')->name('admin.adduser');
+    Route::get('/deleteuser','show_formsController@showdeleteuser')->name('admin.deleteuser');
+    Route::get('/deleteticket','show_formsController@showdeleteticket')->name('admin.deleteticket');
+    Route::get('/addticket','show_formsController@showaddticket')->name('admin.addticket');
+    Route::post('/addflight','FlightController@addflight')->name('admin.add_flight');
+    Route::get('/listflight_after/{id}','FlightController@deleteflight')->name('admin.delete_flight');
+    Route::get('/viewflight','FlightController@viewallflight')->name('admin.view_flight');
+    Route::post('/adduser','userController@adduser')->name('admin.add_user');
+    Route::get('/listuser_after/{id}','userController@deleteuser')->name('admin.delete_user');
+    Route::get('/viewuser','userController@viewalluser')->name('admin.view_user');
+    Route::get('/updatepassword','show_formsController@showupdatepassword')->name('admin.updatepassword');
+    Route::post('/updatepassword','userController@updatepassword')->name('admin.update_password');
+    Route::get('/viewticket','ticketController@viewallticket')->name('admin.view_ticket');
     Route::get('/list_after/{id}','ticketController@delete');
+
+
 });
