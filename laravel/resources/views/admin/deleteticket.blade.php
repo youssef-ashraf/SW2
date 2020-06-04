@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>View Tickets</title>
+  <title>delete tickets</title>
 
   <!-- Custom fonts for this template -->
   <link href="{{asset('adminn')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
           <ul class="navbar-nav ml-auto">
 
             
-            <h1 class="h3 mb-2 text-gray-800">View Flights</h1>
+            <h1 class="h3 mb-2 text-gray-800">Delete Tickets</h1>
 			<p class="mb-4"></p>
 
             
@@ -99,6 +99,7 @@
                       <th>Seat Type</th>
                       <th>Seat Number</th>
                         <th>Seat Cost</th> 
+                        <td>DeleteButton</td>
                     </tr>
                   </thead>
                   <tfoot>
@@ -118,7 +119,8 @@
                   <th>Land Time</th>
                       <th>Seat Type</th>
                       <th>Seat Number</th>
-                        <th>Seat Cost</th> 
+                        <th>Seat Cost</th>
+                        <td>DeleteButton</td> 
                     </tr>
                   </tfoot>
                   <tbody>
@@ -139,6 +141,8 @@
                       <th>{{$t->seat_type}}</th>
                       <th>{{$t->seat_num}}</th>
                         <th>{{$t->cost}}</th> 
+                        <td><a href="/list_after/{{$t->id}}"><button>delete</button></a></td>
+         
                     </tr>
                    
                    @endforeach 

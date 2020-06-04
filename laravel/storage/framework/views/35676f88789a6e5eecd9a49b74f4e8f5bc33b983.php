@@ -12,21 +12,21 @@
   <title>View Flights</title>
 
   <!-- Custom fonts for this template -->
-  <link href="{{asset('adminn')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('adminn')}}/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="{{asset('adminn')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow  bg-gradient-primary">
      <div class="place-cap-bottom ">
-   <a href="{{route('admin.control')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
+   <a href="<?php echo e(route('admin.control')); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
           </div>
                                 
 </nav>
@@ -124,28 +124,28 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                  @foreach($tickets as $t)
+                  <?php $__currentLoopData = $tickets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                    <th>{{$t->id}}</th>
-                    <th>{{$t->user_id}}</th>
+                    <th><?php echo e($t->id); ?></th>
+                    <th><?php echo e($t->user_id); ?></th>
 
-                    <th>{{$t->flight_id}}</th>
-                    <th>{{$t->seat_id}}</th>
-                    <th>{{$t->from_country}}</th>
-                    <th>{{$t->to_country}}</th>
-                    <th>{{$t->take_off_date}}</th>
-                    <td>{{$t->take_off_time}}</td>
-                    <td>{{$t->land_date}}</td>
-                      <td>{{$t->land_time}}</td>
+                    <th><?php echo e($t->flight_id); ?></th>
+                    <th><?php echo e($t->seat_id); ?></th>
+                    <th><?php echo e($t->from_country); ?></th>
+                    <th><?php echo e($t->to_country); ?></th>
+                    <th><?php echo e($t->take_off_date); ?></th>
+                    <td><?php echo e($t->take_off_time); ?></td>
+                    <td><?php echo e($t->land_date); ?></td>
+                      <td><?php echo e($t->land_time); ?></td>
              
-                      <th>{{$t->seat_type}}</th>
-                      <th>{{$t->seat_num}}</th>
-                        <th>{{$t->cost}}</th> 
-                        <td><a href="/list_after/{{$t->id}}"><button>delete</button></a></td>
+                      <th><?php echo e($t->seat_type); ?></th>
+                      <th><?php echo e($t->seat_num); ?></th>
+                        <th><?php echo e($t->cost); ?></th> 
+                        <td><a href="/list_after/<?php echo e($t->id); ?>"><button>delete</button></a></td>
          
                     </tr>
                    
-                   @endforeach 
+                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                 
                   </tbody>
            
@@ -184,22 +184,23 @@
   </a>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="{{asset('adminn')}}/vendor/jquery/jquery.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="v{{asset('adminn')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="v<?php echo e(asset('adminn')); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{{asset('adminn')}}/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="{{asset('adminn')}}/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="{{asset('adminn')}}/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/demo/datatables-demo.js"></script>
 
 </body>
 
 </html>
+<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/deleteticket.blade.php ENDPATH**/ ?>

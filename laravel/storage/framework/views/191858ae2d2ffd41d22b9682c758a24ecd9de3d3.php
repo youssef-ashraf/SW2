@@ -9,20 +9,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Add flight</title>
+  <title> Admin Page</title>
 
   <!-- Custom fonts for this template-->
-  <link href="{{asset('adminn')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{{asset('adminn')}}/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/css/sb-admin-2.min.css" rel="stylesheet">
   </head>
 
 <body >
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow  bg-gradient-primary">
 <div class="place-cap-bottom ">
-   <a href="{{route('admin.control')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
+   <a href="<?php echo e(route('admin.control')); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
           </div>
                                 
 </nav>
@@ -38,15 +38,16 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-             <div class="col-lg-6 d-none d-lg-block "><img src = "{{asset('adminn')}}/img/crop.jpg" width ="500" height=" 590"></div>
+             <div class="col-lg-6 d-none d-lg-block "><img src = "<?php echo e(asset('adminn')); ?>/img/crop.jpg" width ="500" height=" 590"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Add Flight</h1>
                   </div>
 				          <hr>
-                  <form class="user"method="post" action="{{route('admin.add_flight')}}" enctype="multipart/form-data">
-                  {{ csrf_field() }}
+                  <form class="user"method="post" action="<?php echo e(route('admin.add_flight')); ?>" enctype="multipart/form-data">
+                  <?php echo e(csrf_field()); ?>
+
 				<div class="form-group">
                    <input type="text"name="from" class="form-control form-control-user" id="exampleFirstName" placeholder="From Country">
                 </div>
@@ -121,22 +122,23 @@
     </div>
 
   </div>
-  <script src="{{asset('adminn')}}/vendor/jquery/jquery.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="{{asset('adminn')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{{asset('adminn')}}/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="{{asset('adminn')}}/vendor/chart.js/Chart.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="{{asset('adminn')}}/js/demo/chart-area-demo.js"></script>
-  <script src="{{asset('adminn')}}/js/demo/chart-pie-demo.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
 </html>
+<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/addflight.blade.php ENDPATH**/ ?>
