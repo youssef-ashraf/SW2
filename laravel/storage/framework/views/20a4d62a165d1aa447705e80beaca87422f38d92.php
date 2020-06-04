@@ -109,7 +109,7 @@
           <span>Delete Ticket</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo e(route('admin.view_ticket')); ?>}">
+        <a class="nav-link" href="<?php echo e(route('admin.view_ticket')); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>View_Ticket</span></a>
       </li>

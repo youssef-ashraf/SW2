@@ -9,24 +9,24 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>View users</title>
+  <title>delete users</title>
 
   <!-- Custom fonts for this template -->
-  <link href="{{asset('adminn')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('adminn')}}/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="{{asset('adminn')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow  bg-gradient-primary">
      <div class="place-cap-bottom ">
-   <a href="{{route('admin.control')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
+   <a href="<?php echo e(route('admin.control')); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
           </div>
                                 
 </nav>
@@ -59,7 +59,7 @@
           <ul class="navbar-nav ml-auto">
 
             
-            <h1 class="h3 mb-2 text-gray-800">View users</h1>
+            <h1 class="h3 mb-2 text-gray-800">View Flights</h1>
 			<p class="mb-4"></p>
 
             
@@ -84,28 +84,38 @@
                   <thead>
                     <tr>
                     <th>ID</th>
-                      <th>Name</th>
-                      <th>Email</th>
+                    <th>user_Name</th>
+
+                    <th>flight_Email</th>
+                  
+                        <td>DeleteButton</td>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                     <th>ID</th>
-                      <th>Name</th>
-                      <th>Email</th>
+                    <th>user_Name</th>
+
+                    <th>flight_Email</th>
+                    
+                    <td>DeleteButton</td>
+                  
                     </tr>
                   </tfoot>
                   <tbody>
-                  @foreach($useflis as $u)
+                  <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                    <td>{{$u->id}}</td>
-                      <td>{{$u->name}}</td>
-                      <td>{{$u->email}}</td>
-                  
+                    <th><?php echo e($u->id); ?></th>
+                    <th><?php echo e($u->name); ?></th>
+
+                    <th><?php echo e($u->email); ?></th>
+                   
+                        <td><a href="/listuser_after/<?php echo e($u->id); ?>"><button>delete</button></a></td>
+         
                     </tr>
-                   @endforeach 
-                  
-              
+                   
+                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+                
                   </tbody>
            
                       </table>
@@ -143,22 +153,23 @@
   </a>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="{{asset('adminn')}}/vendor/jquery/jquery.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="v{{asset('adminn')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="v<?php echo e(asset('adminn')); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{{asset('adminn')}}/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="{{asset('adminn')}}/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="{{asset('adminn')}}/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/demo/datatables-demo.js"></script>
 
 </body>
 
 </html>
+<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/deleteuser.blade.php ENDPATH**/ ?>

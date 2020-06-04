@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>delete tickets</title>
+  <title>View Tickets</title>
 
   <!-- Custom fonts for this template -->
   <link href="<?php echo e(asset('adminn')); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
           <ul class="navbar-nav ml-auto">
 
             
-            <h1 class="h3 mb-2 text-gray-800">Delete Tickets</h1>
+            <h1 class="h3 mb-2 text-gray-800">View Flights</h1>
 			<p class="mb-4"></p>
 
             
@@ -99,7 +99,6 @@
                       <th>Seat Type</th>
                       <th>Seat Number</th>
                         <th>Seat Cost</th> 
-                        <td>DeleteButton</td>
                     </tr>
                   </thead>
                   <tfoot>
@@ -119,8 +118,7 @@
                   <th>Land Time</th>
                       <th>Seat Type</th>
                       <th>Seat Number</th>
-                        <th>Seat Cost</th>
-                        <td>DeleteButton</td> 
+                        <th>Seat Cost</th> 
                     </tr>
                   </tfoot>
                   <tbody>
@@ -141,8 +139,6 @@
                       <th><?php echo e($t->seat_type); ?></th>
                       <th><?php echo e($t->seat_num); ?></th>
                         <th><?php echo e($t->cost); ?></th> 
-                        <td><a href="/list_after/<?php echo e($t->id); ?>"><button>delete</button></a></td>
-         
                     </tr>
                    
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
@@ -203,4 +199,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/deleteticket.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/viewticket.blade.php ENDPATH**/ ?>

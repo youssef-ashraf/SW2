@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>delete tickets</title>
+  <title>delete Flights</title>
 
   <!-- Custom fonts for this template -->
   <link href="<?php echo e(asset('adminn')); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
           <ul class="navbar-nav ml-auto">
 
             
-            <h1 class="h3 mb-2 text-gray-800">Delete Tickets</h1>
+            <h1 class="h3 mb-2 text-gray-800">Delete Flights</h1>
 			<p class="mb-4"></p>
 
             
@@ -84,64 +84,52 @@
                   <thead>
                     <tr>
                     <th>ID</th>
-                    <th>user_ID</th>
-
-                    <th>flight_ID</th>
-                    <th>seat_ID</th>
-
-
                     <th>From Country</th>
                     <th>To Country</th>
                     <th>Take Off Date</th>
                   <th>Take Off Time</th>
                   <th>Land Date</th> 
                   <th>Land Time</th>
-                      <th>Seat Type</th>
-                      <th>Seat Number</th>
-                        <th>Seat Cost</th> 
+                  <th>Vip Number</th>
+                      <th>Vip Cost</th>
+					        <th>Normal Number</th>
+					          <th>Normal Cost</th> 
                         <td>DeleteButton</td>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                     <th>ID</th>
-                    <th>user_ID</th>
-
-                    <th>flight_ID</th>
-                    <th>seat_ID</th>
-
-
                     <th>From Country</th>
                     <th>To Country</th>
                     <th>Take Off Date</th>
                   <th>Take Off Time</th>
                   <th>Land Date</th> 
                   <th>Land Time</th>
-                      <th>Seat Type</th>
-                      <th>Seat Number</th>
-                        <th>Seat Cost</th>
+                  <th>Vip Number</th>
+                      <th>Vip Cost</th>
+					        <th>Normal Number</th>
+					          <th>Normal Cost</th> 
                         <td>DeleteButton</td> 
                     </tr>
                   </tfoot>
                   <tbody>
-                  <?php $__currentLoopData = $tickets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <?php $__currentLoopData = $flights; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                    <th><?php echo e($t->id); ?></th>
-                    <th><?php echo e($t->user_id); ?></th>
-
-                    <th><?php echo e($t->flight_id); ?></th>
-                    <th><?php echo e($t->seat_id); ?></th>
-                    <th><?php echo e($t->from_country); ?></th>
-                    <th><?php echo e($t->to_country); ?></th>
-                    <th><?php echo e($t->take_off_date); ?></th>
-                    <td><?php echo e($t->take_off_time); ?></td>
-                    <td><?php echo e($t->land_date); ?></td>
-                      <td><?php echo e($t->land_time); ?></td>
-             
-                      <th><?php echo e($t->seat_type); ?></th>
-                      <th><?php echo e($t->seat_num); ?></th>
-                        <th><?php echo e($t->cost); ?></th> 
-                        <td><a href="/list_after/<?php echo e($t->id); ?>"><button>delete</button></a></td>
+                    <td><?php echo e($f->id); ?></td>
+                      <td><?php echo e($f->from_country); ?></td>
+                      <td><?php echo e($f->to_country); ?></td>
+                      <td><?php echo e($f->take_off_date); ?></td>
+            <td><?php echo e($f->take_off_time); ?></td>
+            <td><?php echo e($f->land_date); ?></td>
+                      <td><?php echo e($f->land_time); ?></td>
+                    
+                     
+                      <td><?php echo e($f->seat_vip_num); ?></td>
+            <td><?php echo e($f->vip_cost); ?></td>
+            <td><?php echo e($f->seat_normal_num); ?></td>
+                      <td><?php echo e($f->normal_cost); ?></td>
+                        <td><a href="/listflight_after/<?php echo e($f->id); ?>"><button>delete</button></a></td>
          
                     </tr>
                    
@@ -203,4 +191,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/deleteticket.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/deleteflight.blade.php ENDPATH**/ ?>

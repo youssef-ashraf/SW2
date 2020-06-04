@@ -9,24 +9,24 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>View users</title>
+  <title>View Flights</title>
 
   <!-- Custom fonts for this template -->
-  <link href="{{asset('adminn')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('adminn')}}/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="{{asset('adminn')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="<?php echo e(asset('adminn')); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow  bg-gradient-primary">
      <div class="place-cap-bottom ">
-   <a href="{{route('admin.control')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
+   <a href="<?php echo e(route('admin.control')); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >GoBack</a>
           </div>
                                 
 </nav>
@@ -59,7 +59,7 @@
           <ul class="navbar-nav ml-auto">
 
             
-            <h1 class="h3 mb-2 text-gray-800">View users</h1>
+            <h1 class="h3 mb-2 text-gray-800">View Flights</h1>
 			<p class="mb-4"></p>
 
             
@@ -84,28 +84,57 @@
                   <thead>
                     <tr>
                     <th>ID</th>
-                      <th>Name</th>
-                      <th>Email</th>
+                    <th>From Country</th>
+                      <th>To Country</th>
+                      <th>Take Off Date</th>
+                    <th>Take Off Time</th>
+                      <th>Land Date</th> 
+                      <th>Land Time</th>
+                      
+                    <th>Vip Number</th>
+                      <th>Vip Cost</th>
+					        <th>Normal Number</th>
+					          <th>Normal Cost</th> 
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                     <th>ID</th>
-                      <th>Name</th>
-                      <th>Email</th>
+
+                      <th>From Country</th>
+                      <th>To Country</th>
+                      <th>Take Off Date</th>
+                    <th>Take Off Time</th>
+                      <th>Land Date</th> 
+                      <th>Land Time</th>
+                    
+                    <th>Vip Number</th>
+                      <th>Vip Cost</th>
+					        <th>Normal Number</th>
+					          <th>Normal Cost</th> 
                     </tr>
                   </tfoot>
                   <tbody>
-                  @foreach($useflis as $u)
+                  <?php $__currentLoopData = $flights; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                    <td>{{$u->id}}</td>
-                      <td>{{$u->name}}</td>
-                      <td>{{$u->email}}</td>
-                  
+                    <td><?php echo e($f->id); ?></td>
+                      <td><?php echo e($f->from_country); ?></td>
+                      <td><?php echo e($f->to_country); ?></td>
+                      <td><?php echo e($f->take_off_date); ?></td>
+            <td><?php echo e($f->take_off_time); ?></td>
+            <td><?php echo e($f->land_date); ?></td>
+                      <td><?php echo e($f->land_time); ?></td>
+                    
+                     
+                      <td><?php echo e($f->seat_vip_num); ?></td>
+            <td><?php echo e($f->vip_cost); ?></td>
+            <td><?php echo e($f->seat_normal_num); ?></td>
+                      <td><?php echo e($f->normal_cost); ?></td>
+                      
                     </tr>
-                   @endforeach 
-                  
-              
+                   
+                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+                
                   </tbody>
            
                       </table>
@@ -143,22 +172,23 @@
   </a>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="{{asset('adminn')}}/vendor/jquery/jquery.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="v{{asset('adminn')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="v<?php echo e(asset('adminn')); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{{asset('adminn')}}/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="{{asset('adminn')}}/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="{{asset('adminn')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="{{asset('adminn')}}/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo e(asset('adminn')); ?>/js/demo/datatables-demo.js"></script>
 
 </body>
 
 </html>
+<?php /**PATH C:\Users\catym\Desktop\github flight2\SW2\laravel\resources\views/admin/viewflight.blade.php ENDPATH**/ ?>
